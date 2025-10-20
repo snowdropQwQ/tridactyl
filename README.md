@@ -59,7 +59,7 @@
 
 Catppuccin for Tridactyl comes in two variants to suit different preferences:
 
-### Default Theme (Recommended)
+### Default Theme
 
 The default theme applies Catppuccin colors to Tridactyl's standard interface, keeping the familiar look and feel while adding beautiful Catppuccin colors.
 
