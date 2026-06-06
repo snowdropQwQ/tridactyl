@@ -54,10 +54,7 @@ author: "devnullvoid"
     --tridactyl-logo: url("moz-extension://__MSG_@@extension_id__/static/logo/Tridactyl_64px.png");
     --tridactyl-scrollbar-color: auto;
 
-    /* Customizable accent color - override this to change the primary accent.
-       Try: var(--mauve), var(--peach), var(--red), var(--rosewater),
-            var(--pink), var(--green), var(--teal), var(--sky),
-            var(--sapphire), var(--lavender), var(--yellow), var(--flamingo) */
+    /* Accent color (defaults to blue; pre-baked variants override this) */
     --ctp-accent: var(--blue);
 
     /* Mode indicator */

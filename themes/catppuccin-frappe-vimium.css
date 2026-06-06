@@ -39,10 +39,7 @@
     --tridactyl-fg: var(--text);
     --tridactyl-bg: var(--base);
 
-    /* Customizable accent color - override this to change the primary accent.
-       Try: var(--mauve), var(--peach), var(--red), var(--rosewater),
-            var(--pink), var(--green), var(--teal), var(--sky),
-            var(--sapphire), var(--lavender), var(--yellow), var(--flamingo) */
+    /* Accent color (defaults to blue; pre-baked variants override this) */
     --ctp-accent: var(--blue);
 
     --tridactyl-url-fg: var(--ctp-accent);

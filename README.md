@@ -102,18 +102,6 @@ The modern variants use a primary accent color for URLs, completion URL highligh
 | Sapphire | `catppuccin-<flavor>-sapphire.css` | `catppuccin-<flavor>-vimium-sapphire.css` |
 | Lavender | `catppuccin-<flavor>-lavender.css` | `catppuccin-<flavor>-vimium-lavender.css` |
 
-### Runtime accent override
-
-If you'd rather not commit to a single file, the modern default/vimium files expose a `--ctp-accent` CSS variable that you can override without regenerating. After loading the theme:
-
-```text
-:set customcss.:root { --ctp-accent: var(--mauve); }
-```
-
-Use any palette color from the table above. This works for **both** the pre-baked files (which set their own `--ctp-accent`) and the unsuffixed default files.
-
-> **Note:** `--ctp-accent` is only present in the modern variants. The legacy variants keep the original rosewater / pink / green palette hardcoded, as they appeared in the first release.
-
 ### Legacy variants
 
 The `-legacy` variants preserve the first-release color scheme inspired by the [Catppuccin Vimium](https://github.com/catppuccin/vimium) theme, with rosewater URLs and pink/green completions accents. They are kept for users who prefer the original look or who installed the theme before the Catppuccin-team review changes.
