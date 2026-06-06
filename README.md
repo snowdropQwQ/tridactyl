@@ -57,35 +57,83 @@
 
 ## Usage
 
-Catppuccin for Tridactyl comes in two variants to suit different preferences:
+Catppuccin for Tridactyl ships **four families** of themes per flavor. Each flavor (`latte`, `frappe`, `macchiato`, `mocha`) is available in:
 
-### Default Theme
+| Family | Color scheme | Layout | Notes |
+| --- | --- | --- | --- |
+| `catppuccin-<flavor>.css` | Modern (blue accent) | Default | Recommended starting point. Accent overridable at runtime. |
+| `catppuccin-<flavor>-<accent>.css` | Modern (pre-baked accent) | Default | 13 files per flavor, one per non-blue accent (e.g. `-mauve`, `-peach`). |
+| `catppuccin-<flavor>-vimium.css` / `-vimium-<accent>.css` | Modern | Vimium | Same accents available, with a Vimium-inspired layout. |
+| `catppuccin-<flavor>-legacy.css` / `-vimium-legacy.css` | **Original** | Default / Vimium | First-release color scheme (rosewater / pink / green accents). |
 
-The default theme applies Catppuccin colors to Tridactyl's standard interface, keeping the familiar look and feel while adding beautiful Catppuccin colors.
+### Quick start (Mocha examples)
 
-To apply the **Mocha** theme:
-
-```
+```text
+" Modern, default layout, blue accent
 :colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-mocha.css catppuccin-mocha
+
+" Modern, vimium layout, mauve accent
+:colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-mocha-vimium-mauve.css catppuccin-mocha-vimium-mauve
+
+" Legacy colors, default layout
+:colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-mocha-legacy.css catppuccin-mocha-legacy
 ```
 
-Available for all flavors: `latte`, `frappe`, `macchiato`, `mocha`
+Replace `mocha` with `latte`, `frappe`, or `macchiato` for the other flavors.
 
-### Vimium-Style Theme (Custom Variant)
+### Available accents (modern variants)
 
-For users who prefer a more customized appearance, the `-vimium` variant offers a Vimium-inspired interface with enhanced styling, including custom fonts, spacing, and layout modifications alongside Catppuccin colors.
+The modern variants use a primary accent color for URLs, completion URL highlights, and (in the default layout) hint backgrounds. The default is **blue**. Pre-baked files are provided for every other Catppuccin color:
 
-To use the Vimium-style **Mocha** theme:
+| Accent | Default layout file | Vimium layout file |
+| --- | --- | --- |
+| Blue *(default)* | `catppuccin-<flavor>.css` | `catppuccin-<flavor>-vimium.css` |
+| Rosewater | `catppuccin-<flavor>-rosewater.css` | `catppuccin-<flavor>-vimium-rosewater.css` |
+| Flamingo | `catppuccin-<flavor>-flamingo.css` | `catppuccin-<flavor>-vimium-flamingo.css` |
+| Pink | `catppuccin-<flavor>-pink.css` | `catppuccin-<flavor>-vimium-pink.css` |
+| Mauve | `catppuccin-<flavor>-mauve.css` | `catppuccin-<flavor>-vimium-mauve.css` |
+| Red | `catppuccin-<flavor>-red.css` | `catppuccin-<flavor>-vimium-red.css` |
+| Maroon | `catppuccin-<flavor>-maroon.css` | `catppuccin-<flavor>-vimium-maroon.css` |
+| Peach | `catppuccin-<flavor>-peach.css` | `catppuccin-<flavor>-vimium-peach.css` |
+| Yellow | `catppuccin-<flavor>-yellow.css` | `catppuccin-<flavor>-vimium-yellow.css` |
+| Green | `catppuccin-<flavor>-green.css` | `catppuccin-<flavor>-vimium-green.css` |
+| Teal | `catppuccin-<flavor>-teal.css` | `catppuccin-<flavor>-vimium-teal.css` |
+| Sky | `catppuccin-<flavor>-sky.css` | `catppuccin-<flavor>-vimium-sky.css` |
+| Sapphire | `catppuccin-<flavor>-sapphire.css` | `catppuccin-<flavor>-vimium-sapphire.css` |
+| Lavender | `catppuccin-<flavor>-lavender.css` | `catppuccin-<flavor>-vimium-lavender.css` |
 
+### Runtime accent override
+
+If you'd rather not commit to a single file, the modern default/vimium files expose a `--ctp-accent` CSS variable that you can override without regenerating. After loading the theme:
+
+```text
+:set customcss.:root { --ctp-accent: var(--mauve); }
 ```
-:colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-mocha-vimium.css catppuccin-mocha-vimium
+
+Use any palette color from the table above. This works for **both** the pre-baked files (which set their own `--ctp-accent`) and the unsuffixed default files.
+
+> **Note:** `--ctp-accent` is only present in the modern variants. The legacy variants keep the original rosewater / pink / green palette hardcoded, as they appeared in the first release.
+
+### Legacy variants
+
+The `-legacy` variants preserve the first-release color scheme inspired by the [Catppuccin Vimium](https://github.com/catppuccin/vimium) theme, with rosewater URLs and pink/green completions accents. They are kept for users who prefer the original look or who installed the theme before the Catppuccin-team review changes.
+
+---
+
+## Building
+
+Themes are generated from `.tera` templates using [whiskers](https://github.com/catppuccin/whiskers). To regenerate all 120 files:
+
+```bash
+whiskers tridactyl-default.tera
+whiskers tridactyl-vimium.tera
+whiskers tridactyl-default-legacy.tera
+whiskers tridactyl-vimium-legacy.tera
+whiskers tridactyl-default-accent.tera
+whiskers tridactyl-vimium-accent.tera
 ```
 
-The Vimium variant is available for all flavors:
-- `catppuccin-latte-vimium.css`
-- `catppuccin-frappe-vimium.css`
-- `catppuccin-macchiato-vimium.css`
-- `catppuccin-mocha-vimium.css`
+The `*-accent.tera` templates use whiskers' matrix mode to iterate over `[flavor, accent]`, producing all non-blue accent variants in one command.
 
 ---
 

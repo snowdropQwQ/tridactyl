@@ -48,7 +48,14 @@ author: "devnullvoid"
     --currentline: var(--mantle); /* or --surface0 */
     --tridactyl-fg: var(--text);
     --tridactyl-bg: var(--base);
-    --tridactyl-url-fg: var(--blue);
+
+    /* Customizable accent color - override this to change the primary accent.
+       Try: var(--mauve), var(--peach), var(--red), var(--rosewater),
+            var(--pink), var(--green), var(--teal), var(--sky),
+            var(--sapphire), var(--lavender), var(--yellow), var(--flamingo) */
+    --ctp-accent: var(--blue);
+
+    --tridactyl-url-fg: var(--ctp-accent);
     --tridactyl-url-bg: var(--base);
     --tridactyl-highlight-box-bg: var(--mantle);
     --tridactyl-highlight-box-fg: var(--text);
@@ -77,7 +84,7 @@ author: "devnullvoid"
     --tridactyl-border: var(--lavender);
     --tridactyl-completions-title: var(--subtext0);
     --tridactyl-completions-title-focused: var(--text);
-    --tridactyl-completions-url: var(--blue);
+    --tridactyl-completions-url: var(--ctp-accent);
     --tridactyl-completions-header: var(--peach);
 }
 #command-line-holder {
