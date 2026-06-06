@@ -1,5 +1,5 @@
 /*
-  Catppuccin Macchiato for Tridactyl
+  Catppuccin Macchiato CLI for Tridactyl
   by devnullvoid
 */
 :root {
@@ -31,14 +31,135 @@
     --mantle: #1e2030;
     --crust: #181926;
 
-    /* Custom Font */
-    --font: "Monaspace Krypton", "JetBrainsMono Nerd Font",monospace; /* Default font, can be overridden directly in a forked repo CSS */
+    /* Generic */
+    --tridactyl-font-family: "Monaspace Krypton", "JetBrainsMono Nerd Font", "SF Mono", monospace;
+    --tridactyl-font-family-sans: "Monaspace Neon", "SF Pro", sans-serif;
+    --tridactyl-cmdl-font-family: var(--tridactyl-font-family) !important;
+    --tridactyl-cmplt-font-family: var(--tridactyl-font-family) !important;
+    --tridactyl-hintspan-font-family: var(--tridactyl-font-family) !important;
+    --tridactyl-font-size: 12pt;
+    --tridactyl-small-font-size: calc(var(--tridactyl-font-size) * 0.75);
+    --tridactyl-bg: var(--base);
+    --tridactyl-fg: var(--text);
+    --tridactyl-logo: url("moz-extension://__MSG_@@extension_id__/static/logo/Tridactyl_64px.png");
+    --tridactyl-scrollbar-color: auto;
 
-    /* Tridactyl Theme Variables - Mapped to Catppuccin Colors */
+    /* Customizable accent color - override this to change the primary accent.
+       Try: var(--mauve), var(--peach), var(--red), var(--rosewater),
+            var(--pink), var(--green), var(--teal), var(--sky),
+            var(--sapphire), var(--lavender), var(--yellow), var(--flamingo) */
+    --ctp-accent: var(--blue);
+
+    /* Mode indicator */
+    --tridactyl-status-font-family: var(--tridactyl-font-family);
+    --tridactyl-status-font-size: var(--tridactyl-small-font-size);
+    --tridactyl-status-bg: var(--tridactyl-bg);
+    --tridactyl-status-fg: var(--tridactyl-fg);
+    --tridactyl-status-border: 1px var(--overlay0) solid;
+    --tridactyl-status-border-radius: 2px;
+
+    /* Search highlight */
+    --tridactyl-search-highlight-color: var(--yellow);
+
+    /* Hinting */
+
+    /* Hint character tags */
+    --tridactyl-hintspan-font-family: var(--tridactyl-font-family-sans);
+    --tridactyl-hintspan-font-size: var(--tridactyl-small-font-size);
+    --tridactyl-hintspan-font-weight: bold;
+    --tridactyl-hintspan-fg: var(--base);
+    --tridactyl-hintspan-pressed-fg: var(--tridactyl-hintspan-fg);
+    --tridactyl-hintspan-bg: var(--ctp-accent);
+    --tridactyl-hintspan-border-color: var(--ctp-accent);
+    --tridactyl-hintspan-border-width: 0px;
+    --tridactyl-hintspan-border-style: solid;
+    --tridactyl-hintspan-js-background: var(--overlay1);
+
+    /* Element highlights */
+    --tridactyl-hint-active-fg: var(--base);
+    --tridactyl-hint-active-bg: var(--green);
+    --tridactyl-hint-active-outline: 1px solid var(--ctp-accent);
+
+    --tridactyl-hint-bg: var(--ctp-accent);
+    --tridactyl-hint-outline: 1px solid var(--ctp-accent);
+
+    /* :viewsource */
+    --tridactyl-vs-bg: var(--tridactyl-bg);
+    --tridactyl-vs-fg: var(--tridactyl-fg);
+    --tridactyl-vs-font-family: var(--tridactyl-font-family);
+
+    /*commandline*/
+
+    --tridactyl-cmdl-bg: var(--tridactyl-bg);
+    --tridactyl-cmdl-fg: var(--tridactyl-fg);
+    --tridactyl-cmdl-line-height: 1.5;
+    /*--tridactyl-cmdl-font-family: monospace;*/
+    --tridactyl-cmdl-font-size: calc(var(--tridactyl-font-size) * 0.75);
+
+    /*completions*/
+
+    --tridactyl-cmplt-option-height: 1.4em;
+    --tridactyl-cmplt-fg: var(--tridactyl-fg);
+    --tridactyl-cmplt-bg: var(--tridactyl-bg);
+    --tridactyl-cmplt-font-size: calc(var(--tridactyl-font-size) * 9 / 12);
+    --tridactyl-cmplt-border-top: 1px solid var(--overlay0);
+
+    /*sectionHeader*/
+
+    --tridactyl-header-first-bg: var(--surface0);
+    --tridactyl-header-second-bg: var(--surface1);
+    --tridactyl-header-third-bg: var(--surface2);
+
+    --tridactyl-header-font-size: inherit;
+    --tridactyl-header-font-weight: bold;
+    --tridactyl-header-border-bottom: 1px solid var(--overlay0);
+
+    /*url style*/
+
+    --tridactyl-url-text-decoration: none;
+    --tridactyl-url-fg: var(--green);
+    --tridactyl-url-bg: var(--tridactyl-bg);
+    --tridactyl-url-cursor: pointer;
+
+    /*option focused*/
+
+    --tridactyl-of-fg: var(--text);
+    --tridactyl-of-bg: var(--surface1);
+
+    /*new tab spoiler box*/
+    --tridactyl-highlight-box-bg: var(--surface0);
+    --tridactyl-highlight-box-fg: var(--text);
+
+    --tridactyl-private-window-icon-url: url("chrome://browser/skin/privatebrowsing/private-browsing.svg");
+
+    --tridactyl-container-fingerprint-url: url("resource://usercontext-content/fingerprint.svg");
+    --tridactyl-container-briefcase-url: url("resource://usercontext-content/briefcase.svg");
+    --tridactyl-container-dollar-url: url("resource://usercontext-content/dollar.svg");
+    --tridactyl-container-cart-url: url("resource://usercontext-content/cart.svg");
+    --tridactyl-container-circle-url: url("resource://usercontext-content/circle.svg");
+    --tridactyl-container-gift-url: url("resource://usercontext-content/gift.svg");
+    --tridactyl-container-vacation-url: url("resource://usercontext-content/vacation.svg");
+    --tridactyl-container-food-url: url("resource://usercontext-content/food.svg");
+    --tridactyl-container-fruit-url: url("resource://usercontext-content/fruit.svg");
+    --tridactyl-container-pet-url: url("resource://usercontext-content/pet.svg");
+    --tridactyl-container-tree-url: url("resource://usercontext-content/tree.svg");
+    --tridactyl-container-chill-url: url("resource://usercontext-content/chill.svg");
+
+    --tridactyl-container-color-blue: var(--blue);
+    --tridactyl-container-color-turquoise: var(--sky);
+    --tridactyl-container-color-green: var(--green);
+    --tridactyl-container-color-yellow: var(--yellow);
+    --tridactyl-container-color-orange: var(--peach);
+    --tridactyl-container-color-red: var(--red);
+    --tridactyl-container-color-pink: var(--pink);
+    --tridactyl-container-color-purple: var(--mauve);
+
+    --tridactyl-externaledit-bg: var(--tridactyl-logo) no-repeat center;
+
     --currentline: var(--mantle); /* or --surface0 */
     --tridactyl-fg: var(--text);
     --tridactyl-bg: var(--base);
-    --tridactyl-url-fg: var(--rosewater);
+    --tridactyl-url-fg: var(--ctp-accent);
     --tridactyl-url-bg: var(--base);
     --tridactyl-highlight-box-bg: var(--mantle);
     --tridactyl-highlight-box-fg: var(--text);
@@ -48,174 +169,101 @@
     /* Command Line Specific */
     --tridactyl-cmdl-fg: var(--text);
     --tridactyl-cmdl-bg: var(--base);
-    --tridactyl-cmdl-font-family: var(--font);
-    --tridactyl-cmplt-font-family: var(--font);
-    --tridactyl-hintspan-font-family: var(--font);
 
     /* Hint character tags */
     --tridactyl-hintspan-fg: var(--base) !important;
-    --tridactyl-hintspan-bg: var(--green) !important;
+    --tridactyl-hintspan-bg: var(--peach) !important;
 
     /* Element Highlights (using "none") */
+    /*
     --tridactyl-hint-active-fg: none;
     --tridactyl-hint-active-bg: none;
     --tridactyl-hint-active-outline: none;
     --tridactyl-hint-bg: none;
     --tridactyl-hint-outline: none;
+    */
 
     /* Element Colors */
     --tridactyl-border: var(--lavender);
-    --tridactyl-completions-title: var(--blue);
-    --tridactyl-completions-title-focused: var(--pink);
-    --tridactyl-completions-url: var(--green);
+    --tridactyl-completions-title: var(--subtext0);
+    --tridactyl-completions-title-focused: var(--text);
+    --tridactyl-completions-url: var(--ctp-accent);
     --tridactyl-completions-header: var(--peach);
 }
-#command-line-holder {
-    order: 1;
-    border: 2px solid var(--tridactyl-border);
-    background: var(--tridactyl-bg);
-}
 
-#command-line-holder #tridactyl-colon {
-    display: none;
+#command-line-holder {
+    border-top: 1px solid var(--tridactyl-border);
+    background: var(--tridactyl-bg);
 }
 
 #tridactyl-input {
-    padding: 1rem;
     color: var(--tridactyl-fg);
-    width: 90%;
-    font-size: 1.5rem;
-    line-height: 1.5;
     background: var(--tridactyl-bg);
-    padding-left: unset;
-    padding: 1rem;
 }
 
 #completions table {
-    font-size: 0.8rem;
-    font-weight: 200;
-    border-spacing: 0;
-    table-layout: fixed;
-    padding: 1rem 0;
-    /* padding-top: 1rem; */
-    /* padding-bottom: 1rem; */
 }
 
 #completions > div {
-    max-height: calc(20 * var(--option-height));
-    min-height: calc(10 * var(--option-height));
 }
 
 /* COMPLETIONS */
 
 #completions {
-    --option-height: 1.4em;
     color: var(--tridactyl-fg);
     background: var(--tridactyl-bg);
-    display: inline-block;
-    font-size: unset;
-    font-weight: 200;
-    overflow: hidden;
-    width: 100%;
-    border-top: unset;
-    order: 2;
 }
 
-/* Olie doesn't know how CSS inheritance works */
 #completions .HistoryCompletionSource {
-    max-height: unset;
-    min-height: unset;
 }
 
 #completions .HistoryCompletionSource table {
-    width: 100%;
-    /* font-size: 9pt; */
-    border-spacing: 0;
-    table-layout: fixed;
 }
 
-/* redundancy 2: redundancy 2: more redundancy */
 #completions .BmarkCompletionSource {
-    max-height: unset;
-    min-height: unset;
 }
 
 #completions table tr td.prefix,#completions table tr td.privatewindow,#completions table tr td.container,#completions table tr td.icon {
-    display: none;
 }
 
 #completions .BufferCompletionSource table {
-    width: unset;
-    /* font-size: unset; */
-    border-spacing: unset;
-    table-layout: unset;
 }
 
 #completions table tr.BufferCompletionOption {
-  white-space: wrap;
 }
 #completions table tr.BufferCompletionOption td.content {
-  width: auto;
 }
 
 #completions table tr .title, #completions table tr td.excmd {
-    /* width: 50%; */
-    padding-left: 1rem;
     color: var(--tridactyl-completions-title);
 
 }
 
 #completions table tr .content, #completions table tr td.documentation {
-  padding-right: 1rem;
 }
 #completions table tr.ExcmdCompletionOption .documentation {
-  white-space: pre-line;
 }
 
 #completions table tr {
-    white-space: wrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 #completions table tr td {
-  padding: .25rem 0;
 }
 
 #completions .sectionHeader {
-    background: unset;
-    font-weight: bold;
-    border-bottom: unset;
-    padding: 1rem 1rem 0 !important;
-    padding-left: unset;
-    padding-bottom: 0.2rem;
     color: var(--tridactyl-completions-header);
 }
 
 #cmdline_iframe {
-    position: fixed !important;
-    bottom: unset;
-    top: 25% !important;
-    left: 10% !important;
-    z-index: 2147483647 !important;
-    width: 80% !important;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 20px !important;
 }
 
 .TridactylStatusIndicator {
-    position: fixed !important;
-    bottom: 0 !important;
     background: var(--tridactyl-bg) !important;
-    border: unset !important;
     border: 1px var(--lavender) solid !important;
-    font-size: 12pt !important;
-    /*font-weight: 200 !important;*/
-    padding: 0.8ex !important;
 }
 
 #completions .focused {
     background: var(--currentline);
-    /* color: var(--blue); */
     font-weight: bold;
 }
 #completions .focused td.title, #completions .focused td.excmd {

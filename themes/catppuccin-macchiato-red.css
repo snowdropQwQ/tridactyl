@@ -1,5 +1,5 @@
 /*
-  Catppuccin Macchiato CLI for Tridactyl
+  Catppuccin Macchiato CLI for Tridactyl (red accent)
   by devnullvoid
 */
 :root {
@@ -44,6 +44,9 @@
     --tridactyl-logo: url("moz-extension://__MSG_@@extension_id__/static/logo/Tridactyl_64px.png");
     --tridactyl-scrollbar-color: auto;
 
+    /* Accent color (pre-baked variant) */
+    --ctp-accent: var(--red);
+
     /* Mode indicator */
     --tridactyl-status-font-family: var(--tridactyl-font-family);
     --tridactyl-status-font-size: var(--tridactyl-small-font-size);
@@ -63,8 +66,8 @@
     --tridactyl-hintspan-font-weight: bold;
     --tridactyl-hintspan-fg: var(--base);
     --tridactyl-hintspan-pressed-fg: var(--tridactyl-hintspan-fg);
-    --tridactyl-hintspan-bg: var(--blue);
-    --tridactyl-hintspan-border-color: var(--blue);
+    --tridactyl-hintspan-bg: var(--ctp-accent);
+    --tridactyl-hintspan-border-color: var(--ctp-accent);
     --tridactyl-hintspan-border-width: 0px;
     --tridactyl-hintspan-border-style: solid;
     --tridactyl-hintspan-js-background: var(--overlay1);
@@ -72,10 +75,10 @@
     /* Element highlights */
     --tridactyl-hint-active-fg: var(--base);
     --tridactyl-hint-active-bg: var(--green);
-    --tridactyl-hint-active-outline: 1px solid var(--blue);
+    --tridactyl-hint-active-outline: 1px solid var(--ctp-accent);
 
-    --tridactyl-hint-bg: var(--blue);
-    --tridactyl-hint-outline: 1px solid var(--blue);
+    --tridactyl-hint-bg: var(--ctp-accent);
+    --tridactyl-hint-outline: 1px solid var(--ctp-accent);
 
     /* :viewsource */
     --tridactyl-vs-bg: var(--tridactyl-bg);
@@ -153,7 +156,7 @@
     --currentline: var(--mantle); /* or --surface0 */
     --tridactyl-fg: var(--text);
     --tridactyl-bg: var(--base);
-    --tridactyl-url-fg: var(--rosewater);
+    --tridactyl-url-fg: var(--ctp-accent);
     --tridactyl-url-bg: var(--base);
     --tridactyl-highlight-box-bg: var(--mantle);
     --tridactyl-highlight-box-fg: var(--text);
@@ -179,9 +182,9 @@
 
     /* Element Colors */
     --tridactyl-border: var(--lavender);
-    --tridactyl-completions-title: var(--blue);
-    --tridactyl-completions-title-focused: var(--pink);
-    --tridactyl-completions-url: var(--green);
+    --tridactyl-completions-title: var(--subtext0);
+    --tridactyl-completions-title-focused: var(--text);
+    --tridactyl-completions-url: var(--ctp-accent);
     --tridactyl-completions-header: var(--peach);
 }
 

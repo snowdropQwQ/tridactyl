@@ -1,35 +1,35 @@
 /*
-  Catppuccin Mocha CLI for Tridactyl
+  Catppuccin Latte CLI for Tridactyl (red accent)
   by devnullvoid
 */
 :root {
-    /* Catppuccin Mocha Palette Colors */
-    --rosewater: #f5e0dc;
-    --flamingo: #f2cdcd;
-    --pink: #f5c2e7;
-    --mauve: #cba6f7;
-    --red: #f38ba8;
-    --maroon: #eba0ac;
-    --peach: #fab387;
-    --yellow: #f9e2af;
-    --green: #a6e3a1;
-    --teal: #94e2d5;
-    --sky: #89dceb;
-    --sapphire: #74c7ec;
-    --blue: #89b4fa;
-    --lavender: #b4befe;
-    --text: #cdd6f4;
-    --subtext1: #bac2de;
-    --subtext0: #a6adc8;
-    --overlay2: #9399b2;
-    --overlay1: #7f849c;
-    --overlay0: #6c7086;
-    --surface2: #585b70;
-    --surface1: #45475a;
-    --surface0: #313244;
-    --base: #1e1e2e;
-    --mantle: #181825;
-    --crust: #11111b;
+    /* Catppuccin Latte Palette Colors */
+    --rosewater: #dc8a78;
+    --flamingo: #dd7878;
+    --pink: #ea76cb;
+    --mauve: #8839ef;
+    --red: #d20f39;
+    --maroon: #e64553;
+    --peach: #fe640b;
+    --yellow: #df8e1d;
+    --green: #40a02b;
+    --teal: #179299;
+    --sky: #04a5e5;
+    --sapphire: #209fb5;
+    --blue: #1e66f5;
+    --lavender: #7287fd;
+    --text: #4c4f69;
+    --subtext1: #5c5f77;
+    --subtext0: #6c6f85;
+    --overlay2: #7c7f93;
+    --overlay1: #8c8fa1;
+    --overlay0: #9ca0b0;
+    --surface2: #acb0be;
+    --surface1: #bcc0cc;
+    --surface0: #ccd0da;
+    --base: #eff1f5;
+    --mantle: #e6e9ef;
+    --crust: #dce0e8;
 
     /* Generic */
     --tridactyl-font-family: "Monaspace Krypton", "JetBrainsMono Nerd Font", "SF Mono", monospace;
@@ -43,6 +43,9 @@
     --tridactyl-fg: var(--text);
     --tridactyl-logo: url("moz-extension://__MSG_@@extension_id__/static/logo/Tridactyl_64px.png");
     --tridactyl-scrollbar-color: auto;
+
+    /* Accent color (pre-baked variant) */
+    --ctp-accent: var(--red);
 
     /* Mode indicator */
     --tridactyl-status-font-family: var(--tridactyl-font-family);
@@ -63,8 +66,8 @@
     --tridactyl-hintspan-font-weight: bold;
     --tridactyl-hintspan-fg: var(--base);
     --tridactyl-hintspan-pressed-fg: var(--tridactyl-hintspan-fg);
-    --tridactyl-hintspan-bg: var(--blue);
-    --tridactyl-hintspan-border-color: var(--blue);
+    --tridactyl-hintspan-bg: var(--ctp-accent);
+    --tridactyl-hintspan-border-color: var(--ctp-accent);
     --tridactyl-hintspan-border-width: 0px;
     --tridactyl-hintspan-border-style: solid;
     --tridactyl-hintspan-js-background: var(--overlay1);
@@ -72,10 +75,10 @@
     /* Element highlights */
     --tridactyl-hint-active-fg: var(--base);
     --tridactyl-hint-active-bg: var(--green);
-    --tridactyl-hint-active-outline: 1px solid var(--blue);
+    --tridactyl-hint-active-outline: 1px solid var(--ctp-accent);
 
-    --tridactyl-hint-bg: var(--blue);
-    --tridactyl-hint-outline: 1px solid var(--blue);
+    --tridactyl-hint-bg: var(--ctp-accent);
+    --tridactyl-hint-outline: 1px solid var(--ctp-accent);
 
     /* :viewsource */
     --tridactyl-vs-bg: var(--tridactyl-bg);
@@ -153,7 +156,7 @@
     --currentline: var(--mantle); /* or --surface0 */
     --tridactyl-fg: var(--text);
     --tridactyl-bg: var(--base);
-    --tridactyl-url-fg: var(--rosewater);
+    --tridactyl-url-fg: var(--ctp-accent);
     --tridactyl-url-bg: var(--base);
     --tridactyl-highlight-box-bg: var(--mantle);
     --tridactyl-highlight-box-fg: var(--text);
@@ -179,9 +182,9 @@
 
     /* Element Colors */
     --tridactyl-border: var(--lavender);
-    --tridactyl-completions-title: var(--blue);
-    --tridactyl-completions-title-focused: var(--pink);
-    --tridactyl-completions-url: var(--green);
+    --tridactyl-completions-title: var(--subtext0);
+    --tridactyl-completions-title-focused: var(--text);
+    --tridactyl-completions-url: var(--ctp-accent);
     --tridactyl-completions-header: var(--peach);
 }
 

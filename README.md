@@ -12,116 +12,134 @@
 </p>
 
 <p align="center">
-  <img src="./assets/preview.webp"/>
+  <img src="./assets/cli-preview.webp"/>
 </p>
 
-## CLI Theme
+## Vimium-Style Theme
 <p align="center">
-  <img src="./assets/cli-preview.webp"/>
+  <img src="./assets/preview.webp"/>
 </p>
 
 ## Previews
 
 <details>
 <summary>🌻 Latte</summary>
-  <img src="./assets/latte.webp"/>
-  <br/>
-  <strong>CLI Version</strong>
-  <br/>
   <img src="./assets/cli-latte.webp"/>
+  <br/>
+  <strong>Vimium-Style Variant</strong>
+  <br/>
+  <img src="./assets/latte.webp"/>
 </details>
 <details>
 <summary>🪴 Frappé</summary>
-  <img src="./assets/frappe.webp"/>
-  <br/>
-  <strong>CLI Version</strong>
-  <br/>
   <img src="./assets/cli-frappe.webp"/>
+  <br/>
+  <strong>Vimium-Style Variant</strong>
+  <br/>
+  <img src="./assets/frappe.webp"/>
 </details>
 <details>
 <summary>🌺 Macchiato</summary>
-  <img src="./assets/macchiato.webp"/>
-  <br/>
-  <strong>CLI Version</strong>
-  <br/>
   <img src="./assets/cli-macchiato.webp"/>
+  <br/>
+  <strong>Vimium-Style Variant</strong>
+  <br/>
+  <img src="./assets/macchiato.webp"/>
 </details>
 <details>
 <summary>🌿 Mocha</summary>
-  <img src="./assets/mocha.webp"/>
-  <br/>
-  <strong>CLI Version</strong>
-  <br/>
   <img src="./assets/cli-mocha.webp"/>
+  <br/>
+  <strong>Vimium-Style Variant</strong>
+  <br/>
+  <img src="./assets/mocha.webp"/>
 </details>
 
 ## Usage
-To apply a Catppuccin theme to Tridactyl, you'll use the `:colourscheme` command. Replace `<flavor>` with your desired Catppuccin palette: `latte`, `frappe`, `macchiato`, or `mocha`.
 
-For example, to set the **Mocha** theme:
+Catppuccin for Tridactyl ships **four families** of themes per flavor. Each flavor (`latte`, `frappe`, `macchiato`, `mocha`) is available in:
 
-```
+| Family | Color scheme | Layout | Notes |
+| --- | --- | --- | --- |
+| `catppuccin-<flavor>.css` | Modern (blue accent) | Default | Recommended starting point. Accent overridable at runtime. |
+| `catppuccin-<flavor>-<accent>.css` | Modern (pre-baked accent) | Default | 13 files per flavor, one per non-blue accent (e.g. `-mauve`, `-peach`). |
+| `catppuccin-<flavor>-vimium.css` / `-vimium-<accent>.css` | Modern | Vimium | Same accents available, with a Vimium-inspired layout. |
+| `catppuccin-<flavor>-legacy.css` / `-vimium-legacy.css` | **Original** | Default / Vimium | First-release color scheme (rosewater / pink / green accents). |
+
+### Quick start (Mocha examples)
+
+```text
+" Modern, default layout, blue accent
 :colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-mocha.css catppuccin-mocha
+
+" Modern, vimium layout, mauve accent
+:colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-mocha-vimium-mauve.css catppuccin-mocha-vimium-mauve
+
+" Legacy colors, default layout
+:colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-mocha-legacy.css catppuccin-mocha-legacy
 ```
 
-Once executed, the theme should apply instantly.
+Replace `mocha` with `latte`, `frappe`, or `macchiato` for the other flavors.
 
-### CLI Alternative Theme
+### Available accents (modern variants)
 
-We also provide a **CLI-friendly alternative** based on the default Tridactyl theme but with Catppuccin colors. This theme maintains the familiar look and feel of the original Tridactyl interface while incorporating the beautiful Catppuccin color palette. CLI users will feel right at home with this theme.
+The modern variants use a primary accent color for URLs, completion URL highlights, and (in the default layout) hint backgrounds. The default is **blue**. Pre-baked files are provided for every other Catppuccin color:
 
-To use the CLI version, simply append `-cli` to the filename:
+| Accent | Default layout file | Vimium layout file |
+| --- | --- | --- |
+| Blue *(default)* | `catppuccin-<flavor>.css` | `catppuccin-<flavor>-vimium.css` |
+| Rosewater | `catppuccin-<flavor>-rosewater.css` | `catppuccin-<flavor>-vimium-rosewater.css` |
+| Flamingo | `catppuccin-<flavor>-flamingo.css` | `catppuccin-<flavor>-vimium-flamingo.css` |
+| Pink | `catppuccin-<flavor>-pink.css` | `catppuccin-<flavor>-vimium-pink.css` |
+| Mauve | `catppuccin-<flavor>-mauve.css` | `catppuccin-<flavor>-vimium-mauve.css` |
+| Red | `catppuccin-<flavor>-red.css` | `catppuccin-<flavor>-vimium-red.css` |
+| Maroon | `catppuccin-<flavor>-maroon.css` | `catppuccin-<flavor>-vimium-maroon.css` |
+| Peach | `catppuccin-<flavor>-peach.css` | `catppuccin-<flavor>-vimium-peach.css` |
+| Yellow | `catppuccin-<flavor>-yellow.css` | `catppuccin-<flavor>-vimium-yellow.css` |
+| Green | `catppuccin-<flavor>-green.css` | `catppuccin-<flavor>-vimium-green.css` |
+| Teal | `catppuccin-<flavor>-teal.css` | `catppuccin-<flavor>-vimium-teal.css` |
+| Sky | `catppuccin-<flavor>-sky.css` | `catppuccin-<flavor>-vimium-sky.css` |
+| Sapphire | `catppuccin-<flavor>-sapphire.css` | `catppuccin-<flavor>-vimium-sapphire.css` |
+| Lavender | `catppuccin-<flavor>-lavender.css` | `catppuccin-<flavor>-vimium-lavender.css` |
 
+### Runtime accent override
+
+If you'd rather not commit to a single file, the modern default/vimium files expose a `--ctp-accent` CSS variable that you can override without regenerating. After loading the theme:
+
+```text
+:set customcss.:root { --ctp-accent: var(--mauve); }
 ```
-:colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-mocha-cli.css catppuccin-mocha-cli
-```
 
-The CLI theme is available for all flavors:
-- `catppuccin-latte-cli.css`
-- `catppuccin-frappe-cli.css`
-- `catppuccin-macchiato-cli.css`
-- `catppuccin-mocha-cli.css`
+Use any palette color from the table above. This works for **both** the pre-baked files (which set their own `--ctp-accent`) and the unsuffixed default files.
+
+> **Note:** `--ctp-accent` is only present in the modern variants. The legacy variants keep the original rosewater / pink / green palette hardcoded, as they appeared in the first release.
+
+### Legacy variants
+
+The `-legacy` variants preserve the first-release color scheme inspired by the [Catppuccin Vimium](https://github.com/catppuccin/vimium) theme, with rosewater URLs and pink/green completions accents. They are kept for users who prefer the original look or who installed the theme before the Catppuccin-team review changes.
 
 ---
 
-## Customization & Contributing
+## Building
 
-Want to tweak the colors or fonts to perfectly match your setup? It's easy to create your own custom version of the theme.
+Themes are generated from `.tera` templates using [whiskers](https://github.com/catppuccin/whiskers). To regenerate all 120 files:
 
-1.  **Fork the repository:** Start by forking the `devnullvoid/tridactyl` repository on GitHub to your own account.
-2.  **Edit the CSS variables:**
-    Navigate to the `catppuccin-<flavor>.css` file (e.g., `catppuccin-mocha.css`) within your forked repository. You can edit this file directly on GitHub or clone the repository to your local machine.
+```bash
+whiskers tridactyl-default.tera
+whiskers tridactyl-vimium.tera
+whiskers tridactyl-default-legacy.tera
+whiskers tridactyl-vimium-legacy.tera
+whiskers tridactyl-default-accent.tera
+whiskers tridactyl-vimium-accent.tera
+```
 
-    You'll find a set of CSS variables that control the theme's colors and fonts. Feel free to modify them to your liking.
+The `*-accent.tera` templates use whiskers' matrix mode to iterate over `[flavor, accent]`, producing all non-blue accent variants in one command.
 
-    ### Customization Examples:
+---
 
-    * **Change a specific Tridactyl UI element's color:**
-        ```css
-        /* Changes the foreground color of the URL in the command line */
-        --tridactyl-url-fg: var(--rosewater);
-        /* Changes the border color of Tridactyl UI elements */
-        --tridactyl-border: var(--lavender);
-        ```
-        In the examples above, you can replace `var(--rosewater)` or `var(--lavender)` with any of the available Catppuccin colors (e.g., `var(--pink)`, `var(--mauve)`, `var(--red)`, etc.) or even a specific hex code like `#FF0000`.
+## 💝 Contributing
 
-    * **Change the font used throughout Tridactyl:**
-        ```css
-        /* Sets the default font to a monospace font */
-        --font: monospace;
-        ```
-        Replace `monospace` with your preferred font. If the font name contains spaces, remember to wrap it in quotes, e.g., `font: "Fira Code";`.
-
-3.  **Apply your custom theme:**
-    After saving your changes to the CSS file in your forked repository, use the `:colourscheme` command, but point the `--url` to *your* repository and give your custom theme a unique name (e.g., appending `_custom`):
-
-    ```
-    :colourscheme --url https://raw.githubusercontent.com/<your-username>/tridactyl/main/themes/catppuccin-<flavor>.css catppuccin-<flavor>_custom
-    ```
-    Remember to replace `<your-username>` with your GitHub username and `<flavor>` with the base flavor you modified.
-
-4. **Contribute to the project:**
-    If you have any suggestions or improvements, feel free to open an issue or submit a pull request!
+Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
 
 ## 💝 Thanks to
 
