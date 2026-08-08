@@ -6,16 +6,22 @@
 </h3>
 
 <p align="center">
-	<a href="https://github.com/devnullvoid/tridactyl/stargazers"><img src="https://img.shields.io/github/stars/devnullvoid/tridactyl?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
-	<a href="https://github.com/devnullvoid/tridactyl/issues"><img src="https://img.shields.io/github/issues/devnullvoid/tridactyl?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
-	<a href="https://github.com/devnullvoid/tridactyl/contributors"><img src="https://img.shields.io/github/contributors/devnullvoid/tridactyl?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+	<a href="https://github.com/snowdropQwQ/tridactyl/stargazers"><img src="https://img.shields.io/github/stars/devnullvoid/tridactyl?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+	<a href="https://github.com/snowdropQwQ/tridactyl/issues"><img src="https://img.shields.io/github/issues/devnullvoid/tridactyl?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+	<a href="https://github.com/snowdropQwQ/tridactyl/contributors"><img src="https://img.shields.io/github/contributors/devnullvoid/tridactyl?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
+
+> This fork fixes the color of highlighted elements in hint mode to avoid being blind by the flashing color
+
+> [!NOTE]
+> I only edited for catppuccin-mocha!
 
 <p align="center">
   <img src="./assets/cli-preview.webp"/>
 </p>
 
 ## Vimium-Style Theme
+
 <p align="center">
   <img src="./assets/preview.webp"/>
 </p>
@@ -70,13 +76,16 @@ Catppuccin for Tridactyl ships **four families** of themes per flavor. Each flav
 
 ```text
 " Modern, default layout, blue accent
-:colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-mocha.css catppuccin-mocha
+:colourscheme --url https://raw.githubusercontent.com/snowdropQwQ/tridactyl/main/themes/catppuccin-mocha.css catppuccin-mocha
+
+" Modern, default layout, pink accent
+:colourscheme --url https://raw.githubusercontent.com/snowdropQwQ/tridactyl/main/themes/catppuccin-mocha-pink.css catppuccin-mocha-pink
 
 " Modern, vimium layout, mauve accent
-:colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-mocha-vimium-mauve.css catppuccin-mocha-vimium-mauve
+:colourscheme --url https://raw.githubusercontent.com/snowdropQwQ/tridactyl/main/themes/catppuccin-mocha-vimium-mauve.css catppuccin-mocha-vimium-mauve
 
 " Legacy colors, default layout
-:colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-mocha-legacy.css catppuccin-mocha-legacy
+:colourscheme --url https://raw.githubusercontent.com/snowdropQwQ/tridactyl/main/themes/catppuccin-mocha-legacy.css catppuccin-mocha-legacy
 ```
 
 Replace `mocha` with `latte`, `frappe`, or `macchiato` for the other flavors.
@@ -106,7 +115,7 @@ The modern variants use a primary accent color for URLs, completion URL highligh
 
 The `-legacy` variants preserve the first-release color scheme inspired by the [Catppuccin Vimium](https://github.com/catppuccin/vimium) theme, with rosewater URLs and pink/green completions accents. They are kept for users who prefer the original look or who installed the theme before the Catppuccin-team review changes.
 
----
+______________________________________________________________________
 
 ## Building
 
@@ -123,7 +132,7 @@ whiskers tridactyl-vimium-accent.tera
 
 The `*-accent.tera` templates use whiskers' matrix mode to iterate over `[flavor, accent]`, producing all non-blue accent variants in one command.
 
----
+______________________________________________________________________
 
 ## 💝 Contributing
 
@@ -133,7 +142,7 @@ Contributions are welcome! If you have suggestions or improvements, feel free to
 
 - [devnullvoid](https://github.com/devnullvoid)
 
-&nbsp;
+&#160;
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" />
