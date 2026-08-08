@@ -74,10 +74,10 @@
 
     /* Element highlights */
     --tridactyl-hint-active-fg: var(--base);
-    --tridactyl-hint-active-bg: var(--green);
+    --tridactyl-hint-active-bg: color-mix(in srgb, var(--ctp-accent) 25%, transparent);
     --tridactyl-hint-active-outline: 1px solid var(--ctp-accent);
 
-    --tridactyl-hint-bg: var(--ctp-accent);
+    --tridactyl-hint-bg: color-mix(in srgb, var(--ctp-accent) 25%, transparent);
     --tridactyl-hint-outline: 1px solid var(--ctp-accent);
 
     /* :viewsource */
